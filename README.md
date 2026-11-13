@@ -117,3 +117,13 @@ The app attempts to open Chrome automatically. Keep the VS Code terminal open wh
 ## Privacy note
 
 The AI helper sends only class/semester, subject names, marks, total, average, and grade. It does not include student names or student IDs. Avoid entering sensitive personal information in the subject or class fields.
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Student Records
+![Student Records](screenshots/student_records.png)
+
+### AI Performance Analysis
+![AI Performance Analysis](screenshots/ai_performance_analysis.png)
