@@ -120,10 +120,10 @@ The AI helper sends only class/semester, subject names, marks, total, average, a
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](dashboard.png)
 
 ### Student Records
-![Student Records](screenshots/student_records.png)
+![Student Records](student_records.png)
 
 ### AI Performance Analysis
-![AI Performance Analysis](screenshots/ai_performance_analysis.png)
+![AI Performance Analysis](ai_performance_analysis.png)
