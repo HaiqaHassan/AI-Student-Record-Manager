@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Student Record Manager</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">SR</div>
+    <div>
+      <p class="eyebrow">ACADEMIC MANAGEMENT</p>
+      <h1>AI Student Record Manager</h1>
+    </div>
+    <span class="top-note">Learn • Track • Improve</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">STUDENT OVERVIEW</p>
+        <h2>Manage records with clarity.</h2>
+        <p class="muted">Add academic records, calculate results automatically, and get AI-powered learning guidance.</p>
+      </div>
+      <div class="intro-icon">✦</div>
+    </section>
+
+    <div id="notice" class="notice hidden" role="status"></div>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">SECTION A</p><h2>Student Information</h2></div>
+        <span class="step">01</span>
+      </div>
+      <form id="student-form">
+        <div class="form-grid">
+          <label>Student ID<input id="student-id" required placeholder="e.g. S101"></label>
+          <label>Student Name<input id="student-name" required placeholder="Enter full name"></label>
+          <label class="wide">Class / Semester<input id="student-class" required placeholder="e.g. Semester 3"></label>
+          <label class="wide">Subjects <span class="hint">(comma-separated)</span><input id="subjects" required placeholder="Python, Mathematics, English"></label>
+          <label class="wide">Marks <span class="hint">(same order as subjects; out of 100)</span><input id="marks" required placeholder="88, 76, 92"></label>
+        </div>
+        <div class="button-row">
+          <button class="btn primary" type="submit" id="add-btn">Add Student</button>
+          <button class="btn secondary" type="button" id="update-btn">Update Selected</button>
+          <button class="btn danger-outline" type="button" id="delete-btn">Delete Selected</button>
+          <button class="btn quiet" type="button" id="clear-btn">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">SECTION B</p><h2>Student Records</h2></div>
+        <span class="step">02</span>
+      </div>
+      <div class="search-row">
+        <input id="search-input" placeholder="Search by student name or ID" aria-label="Search students">
+        <button class="btn primary" id="search-btn" type="button">Search</button>
+        <button class="btn secondary" id="show-all-btn" type="button">Show All</button>
+      </div>
+      <p class="hint table-hint">Select a row to load that student's details into the form.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Name</th><th>Class / Semester</th><th>Subjects & Marks</th><th>Total</th><th>Average</th><th>Grade</th></tr></thead>
+          <tbody id="records-body"><tr><td colspan="7" class="empty">Loading records…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel ai-panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">SECTION C</p><h2>AI Performance & Study Support</h2></div>
+        <span class="step">03</span>
+      </div>
+      <p class="muted">Select a student record first. The AI receives class, subjects, marks, total, average, and grade only — not the student's name or ID.</p>
+      <div class="button-row">
+        <button class="btn primary" id="analyze-btn" type="button">✦ Analyze Performance</button>
+        <button class="btn secondary" id="tips-btn" type="button">Generate Study Tips</button>
+      </div>
+      <div id="ai-result" class="ai-result">
+        <div class="result-placeholder"><span>✧</span><p>Your personalized AI feedback will appear here.</p></div>
+      </div>
+    </section>
+    <footer>AI Student Record Manager <span>•</span> Built with Python, Flask & Groq</footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
